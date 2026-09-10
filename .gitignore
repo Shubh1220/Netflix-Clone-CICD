@@ -1,0 +1,17 @@
+# Node
+node_modules/
+dist/
+app/dist/
+*.log
+
+# Secrets
+app/.env
+.env
+
+# Reports
+dependency-check-report.*
+trivy-*.txt
+test-results.xml
+
+# OS
+.DS_Store
