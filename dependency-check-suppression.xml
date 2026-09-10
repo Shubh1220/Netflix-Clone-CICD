@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!--
+      Add suppressions here for confirmed false positives, e.g.:
+
+      <suppress>
+        <notes>False positive: dev-only build tool, not shipped in the image</notes>
+        <packageUrl regex="true">^pkg:npm/vite@.*$</packageUrl>
+        <cve>CVE-XXXX-XXXXX</cve>
+      </suppress>
+    -->
+</suppressions>
