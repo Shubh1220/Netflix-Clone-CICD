@@ -55,6 +55,13 @@ jenkins-devsecops-pipeline/
 ├── images/
 │   ├── architecture.gif
 │   └── pipeline-stages.gif
+├── screenshots/                  # deployment proof, referenced in README section 7
+│   ├── jenkins-pipeline.png
+│   ├── sonaqube.png
+│   ├── docker-hub.png
+│   ├── docker-ps.png
+│   ├── aws-ec2.png
+│   └── live-browsing.png
 ├── Jenkinsfile                   # the entire pipeline definition
 ├── sonar-project.properties
 ├── dependency-check-suppression.xml
@@ -251,4 +258,30 @@ Jenkins' `Deploy to EC2` stage SSHes in, pulls the new image, and restarts
 the container. The `Health Check` stage then polls `/healthz` until nginx
 responds or the 10 retries run out, failing the build if the app never
 comes up.
-# Webhook test
+
+## 7. Screenshots
+
+Deployment walkthrough, from the pipeline run to a live app on EC2.
+
+**Pipeline and security scan**
+
+| Jenkins pipeline run | SonarQube analysis |
+|---|---|
+| ![Jenkins pipeline](screenshots/jenkins-pipeline.png) | ![SonarQube](screenshots/sonaqube.png) |
+
+**Image registry and deployment**
+
+| Docker Hub repository | `docker ps` on EC2 |
+|---|---|
+| ![Docker Hub](screenshots/docker-hub.png) | ![docker ps](screenshots/docker-ps.png) |
+
+`docker ps` confirms the container built by the pipeline is up and healthy
+on the deploy target.
+
+**AWS resource and live app**
+
+| EC2 instance | App running in the browser |
+|---|---|
+| ![EC2 instance](screenshots/aws-ec2.png) | ![Live app](screenshots/live-browsing.png) |
+
+
